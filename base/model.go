@@ -107,3 +107,9 @@ type InnerToken struct {
 	PolicyString          string
 	Signature             string
 }
+
+type RawResponse struct {
+	Data []byte
+	Code int
+	Err error
+}
