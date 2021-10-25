@@ -4,6 +4,7 @@ go 1.14
 
 require (
 	github.com/avast/retry-go v3.0.0+incompatible
+	github.com/bits-and-blooms/bitset v1.2.1 // indirect
 	github.com/davecgh/go-spew v1.1.1 // indirect
 	github.com/golang/protobuf v1.4.3
 	github.com/google/uuid v1.3.0

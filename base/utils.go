@@ -35,6 +35,11 @@ func createTempAKSK() (accessKeyId string, plainSk string, err error) {
 	return
 }
 
+func GenerateAccessKeyId(prefix string) (s string) {
+	s,_ = generateAccessKeyId(prefix)
+	return
+}
+
 func generateAccessKeyId(prefix string) (string, error) {
 	uuid := uuid.New()
 
@@ -55,9 +60,19 @@ func randStringRunes(n int) string {
 	return string(b)
 }
 
+func GenerateSecretKey() (s string) {
+	s,_ = generateSecretKey()
+	return
+}
+
 func generateSecretKey() (string, error) {
 	randString32 := randStringRunes(32)
 	return aesEncryptCBCWithBase64([]byte(randString32), []byte("bytedance-isgood"))
+}
+
+func CreateInnerToken(credentials Credentials, sts *SecurityToken2, inlinePolicy *Policy, t int64) (inner *InnerToken) {
+	inner,_ = createInnerToken(credentials,sts,inlinePolicy,t)
+	return
 }
 
 func createInnerToken(credentials Credentials, sts *SecurityToken2, inlinePolicy *Policy, t int64) (*InnerToken, error) {

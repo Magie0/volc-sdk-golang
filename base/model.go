@@ -38,6 +38,9 @@ type Credentials struct {
 	Region          string
 	SessionToken    string
 }
+type Metadata struct {
+	meta metadata
+}
 
 type metadata struct {
 	algorithm       string
