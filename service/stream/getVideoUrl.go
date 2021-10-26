@@ -7,9 +7,9 @@ import (
 	"github.com/volcengine/volc-sdk-golang/base"
 	"github.com/volcengine/volc-sdk-golang/service/stream/stream"
 )
-
-func (s *StreamService) Digg(diggRequest stream.DiggRequest) (resp stream.DiggResponse,err error) {
-	respBody, statusCode, err := s.Client.Query(base.Digg,base.ToUrlValues(&diggRequest))
+TODO
+func (s *StreamService) GetVideoUrl(getVideoUrlRequest stream.GetVideoUrlRequest) (resp stream.GetVideoUrlResponse,err error) {
+	respBody, statusCode, err := s.Client.Query(base.VideoUrl,base.ToUrlValues(&getVideoUrlRequest))
 	if err != nil || statusCode != 200 { 
 		return resp, err
 	}

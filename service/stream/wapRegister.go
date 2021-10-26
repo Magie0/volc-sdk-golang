@@ -9,14 +9,16 @@ import (
 )
 
 func (s *StreamService) WapRegister(wapRegisterRequest stream.WapRegisterRequest) (resp stream.WapRegisterResponse,err error) {
-	respBody, statusCode, err := s.client.Query(base.WapRegister,base.ToUrlValues(wapRegisterRequest))
-	if err != nil || statusCode != base.SdkError.GetNumber(base.SUCCESS) { 
+	values := base.ToUrlValues(&wapRegisterRequest)
+	respBody, statusCode, err := s.Client.Query(base.WapRegister,values)
+	if err != nil || statusCode != 200 { 
 		return resp, err
 	}
-
-	if err := json.Unmarshal(respBody, resp); err != nil {
+	//println(string(respBody))
+	if err := json.Unmarshal(respBody, &resp); err != nil {
+		fmt.Print(err)
 		return resp, err
 	}
-	fmt.Print([]rune("-----"+string(respBody)))
+	//fmt.Println([]rune("-----"+string(respBody)))
 	return resp, nil
 }

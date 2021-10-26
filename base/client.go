@@ -272,6 +272,7 @@ func (client *Client) makeRequest(api string, req *http.Request, timeout time.Du
 	req = req.WithContext(ctx)
 
 	resp, err := client.Client.Do(req)
+	fmt.Print(err)
 	if err != nil {
 		return []byte(""), 500, err
 	}

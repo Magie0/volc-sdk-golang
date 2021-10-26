@@ -8,8 +8,8 @@ import (
 	"github.com/volcengine/volc-sdk-golang/service/stream/stream"
 )
 
-func (s *StreamService) Digg(diggRequest stream.DiggRequest) (resp stream.DiggResponse,err error) {
-	respBody, statusCode, err := s.Client.Query(base.Digg,base.ToUrlValues(&diggRequest))
+func (s *StreamService) Bury(diggRequest stream.DiggRequest) (resp stream.DiggResponse,err error) {
+	respBody, statusCode, err := s.Client.Query(base.Bury,base.ToUrlValues(&diggRequest))
 	if err != nil || statusCode != 200 { 
 		return resp, err
 	}

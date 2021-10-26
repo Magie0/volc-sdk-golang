@@ -9,14 +9,14 @@ import (
 )
 
 func (s *StreamService) GetList(getListRequest stream.GetListRequest) (resp stream.GetListResponse,err error) {
-	respBody, statusCode, err := s.client.Query(base.WapRegister,base.ToUrlValues(getListRequest))
-	if err != nil || statusCode != base.SdkError.GetNumber(base.SUCCESS) { 
+	respBody, statusCode, err := s.Client.Query(base.ContentStream,base.ToUrlValues(&getListRequest))
+	if err != nil || statusCode != 200 { 
 		return resp, err
 	}
 
-	if err := json.Unmarshal(respBody, resp); err != nil {
+	if err := json.Unmarshal(respBody, &resp); err != nil {
 		return resp, err
 	}
-	fmt.Print([]rune("-----"+string(respBody)))
+	fmt.Print("-----"+string(respBody))
 	return resp, nil
 }

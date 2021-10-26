@@ -30,23 +30,25 @@ func NewBaseService1(info base.ServiceInfo,proxy string,apiInfoList map[string]b
 	b = new(BaseService)
 	b.ServiceInfo = info
 	b.ApiInfoList = apiInfoList
-	b.Credential = new(base.Credentials)
+	b.Credential = *new(base.Credentials)
 
 	b.HttpClient = new(base.Client)
 	b.HttpClient.ServiceInfo.Host = proxy
 
 	b.Init(info)
+	return
 }
 
 func NewBaseService2(info base.ServiceInfo,apiInfoList map[string]base.ApiInfo) (b *BaseService) {
 	b = new(BaseService)
 	b.ServiceInfo = info
 	b.ApiInfoList = apiInfoList
-	b.Credential = new(base.Credentials)
+	b.Credential = *new(base.Credentials)
 	
 	b.HttpClient = new(base.Client)
 
 	b.Init(info)
+	return
 }
 
 func (b *BaseService) Init(info base.ServiceInfo) {
@@ -352,5 +354,5 @@ func (b *BaseService) SignSts2(inlinePolicy base.Policy,expire int64) (sts2 base
 	
 	innerToken := base.CreateInnerToken(b.ServiceInfo.Credentials,&sts2,&inlinePolicy,time.Now().Add(time.Duration(expire)).Unix()/1000)
 
-	
+
 }
