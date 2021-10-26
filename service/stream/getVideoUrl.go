@@ -1,5 +1,5 @@
 package stream_s
-
+/*
 import (
 	"encoding/json"
 	"fmt"
@@ -20,3 +20,4 @@ func (s *StreamService) GetVideoUrl(getVideoUrlRequest stream.GetVideoUrlRequest
 	fmt.Print("-----"+string(respBody))
 	return resp, nil
 }
+*/

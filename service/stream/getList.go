@@ -15,6 +15,7 @@ func (s *StreamService) GetList(getListRequest stream.GetListRequest) (resp stre
 	}
 
 	if err := json.Unmarshal(respBody, &resp); err != nil {
+		fmt.Println(err)
 		return resp, err
 	}
 	fmt.Print("-----"+string(respBody))

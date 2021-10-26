@@ -15,13 +15,13 @@ func main() {
 	streamService.Client.SetAccessKey("AKLTY2IwYmI4NWI2NGE2NDU0MDgwNDkxN2ZlYzRjYjZkMDQ")
 	streamService.Client.SetSecretKey("TldZd09XVmhOMkl5TUdJNU5HRXdPV0kyWTJOak1HSmhPR1UwTXpjd1lqTQ==")
 
-	var req stream.DiggRequest
+	var req stream.WapRegisterRequest
 	req.Timestamp = int64(time.Now().Local().Unix())
-	req.AccessToken = "4016360944571705153676044295679a"
-	req.GroupId = "6990197093562404132"
-	req.Partner = "vivoliulanqi"
+	req.Uuid = "1695657902873656"
+	req.Ouid = "12138"
+	req.Partner = "tmxw_api"
 
-	response,err := streamService.Bury(req)
+	response,err := streamService.WapRegister(req)
 	if err!=nil {
 		fmt.Println("Error")
 		return 

@@ -21,7 +21,7 @@ func main() {
 	req.GroupId = "6990197093562404132"
 	req.Partner = "vivoliulanqi"
 
-	response,err := streamService.Bury(req)
+	response,err := streamService.Digg(req)
 	if err!=nil {
 		fmt.Println("Error")
 		return 

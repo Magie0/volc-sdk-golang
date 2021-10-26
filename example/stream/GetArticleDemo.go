@@ -15,13 +15,13 @@ func main() {
 	streamService.Client.SetAccessKey("AKLTY2IwYmI4NWI2NGE2NDU0MDgwNDkxN2ZlYzRjYjZkMDQ")
 	streamService.Client.SetSecretKey("TldZd09XVmhOMkl5TUdJNU5HRXdPV0kyWTJOak1HSmhPR1UwTXpjd1lqTQ==")
 
-	var req stream.DiggRequest
+	var req stream.GetArticleRequest
 	req.Timestamp = int64(time.Now().Local().Unix())
-	req.AccessToken = "4016360944571705153676044295679a"
-	req.GroupId = "6990197093562404132"
-	req.Partner = "vivoliulanqi"
+	req.AccessToken = "3116396576811695657888415752ef58"
+	req.Partner = "fhh_app_default_content"
+	req.GroupId = "7008338242986623518"
 
-	response,err := streamService.Bury(req)
+	response,err := streamService.GetArticle(req)
 	if err!=nil {
 		fmt.Println("Error")
 		return 

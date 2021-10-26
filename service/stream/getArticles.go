@@ -1,5 +1,5 @@
 package stream_s
-
+/*
 import (
 	"encoding/json"
 	"fmt"
@@ -19,4 +19,4 @@ func (s *StreamService) GetArticles(getArticlesRequest stream.GetArticlesRequest
 	}
 	fmt.Print("-----"+string(respBody))
 	return resp, nil
-}
+}*/

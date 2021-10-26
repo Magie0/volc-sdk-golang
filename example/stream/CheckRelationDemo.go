@@ -15,13 +15,13 @@ func main() {
 	streamService.Client.SetAccessKey("AKLTY2IwYmI4NWI2NGE2NDU0MDgwNDkxN2ZlYzRjYjZkMDQ")
 	streamService.Client.SetSecretKey("TldZd09XVmhOMkl5TUdJNU5HRXdPV0kyWTJOak1HSmhPR1UwTXpjd1lqTQ==")
 
-	var req stream.DiggRequest
+	var req stream.CheckRelationRequst
 	req.Timestamp = int64(time.Now().Local().Unix())
 	req.AccessToken = "4016360944571705153676044295679a"
-	req.GroupId = "6990197093562404132"
+	req.UserId = "104792520555"
 	req.Partner = "vivoliulanqi"
 
-	response,err := streamService.Bury(req)
+	response,err := streamService.CheckRelation(req)
 	if err!=nil {
 		fmt.Println("Error")
 		return 

@@ -2,7 +2,6 @@ package stream_s
 
 import (
 	"encoding/json"
-	"fmt"
 
 	"github.com/volcengine/volc-sdk-golang/base"
 	"github.com/volcengine/volc-sdk-golang/service/stream/stream"
@@ -17,6 +16,6 @@ func (s *StreamService) CheckRelation(checkRelationRequst stream.CheckRelationRe
 	if err := json.Unmarshal(respBody, &resp); err != nil {
 		return resp, err
 	}
-	fmt.Print("-----" + string(respBody))
+	//fmt.Print("-----" + string(respBody))
 	return resp, nil
 }

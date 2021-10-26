@@ -15,6 +15,7 @@ func (s *StreamService) RelatedArticle(relatedArticleRequest stream.RelatedArtic
 	}
 
 	if err := json.Unmarshal(respBody, &resp); err != nil {
+		fmt.Println(err)
 		return resp, err
 	}
 	fmt.Print("-----" + string(respBody))
