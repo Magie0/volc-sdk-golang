@@ -15,9 +15,11 @@ func (s *StreamService) RecommendRelatedUser(recommendRelatedUserRequest stream.
 	}
 
 	if err := json.Unmarshal(respBody, &resp); err != nil {
+		//fmt.Println(string(respBody))
 		fmt.Println(err)
 		return resp, err
 	}
 	fmt.Print("-----" + string(respBody))
 	return resp, nil
 }
+

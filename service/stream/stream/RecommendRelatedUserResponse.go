@@ -4,8 +4,8 @@ import "github.com/volcengine/volc-sdk-golang/service/stream/response"
 
 
 type RecommendRelatedUserResponse struct {
-	ResponseMetadata response.ResponseMetadata
-	Result           *RecommendRelatedUserResult
+	ResponseMetadata response.ResponseMetadata 
+	Result           []*RecommendRelatedUserResult
 }
 
 type RecommendRelatedUserResult struct {

@@ -43,5 +43,6 @@ type RelatedArticleUserInfo struct {
 	VerifiedContent string
 	HomePage string
 	Name string
-	UserId string
+	UserId int
+	//UserId string
 }

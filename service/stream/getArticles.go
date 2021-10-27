@@ -1,5 +1,5 @@
 package stream_s
-/*
+
 import (
 	"encoding/json"
 	"fmt"
@@ -7,9 +7,9 @@ import (
 	"github.com/volcengine/volc-sdk-golang/base"
 	"github.com/volcengine/volc-sdk-golang/service/stream/stream"
 )
-TODO
+
 func (s *StreamService) GetArticles(getArticlesRequest stream.GetArticlesRequest) (resp stream.GetArticlesResponse,err error) {
-	respBody, statusCode, err := s.Client.Query(base.SingleArticleInfo,base.ToUrlValues(&getArticlesRequest))
+	respBody, statusCode, err := s.Client.Query(base.MultiArticleInfo,base.ToUrlValues(&getArticlesRequest))
 	if err != nil || statusCode != 200 { 
 		return resp, err
 	}
@@ -19,4 +19,4 @@ func (s *StreamService) GetArticles(getArticlesRequest stream.GetArticlesRequest
 	}
 	fmt.Print("-----"+string(respBody))
 	return resp, nil
-}*/
+}

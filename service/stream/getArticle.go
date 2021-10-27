@@ -18,6 +18,6 @@ func (s *StreamService) GetArticle(getArticleRequest stream.GetArticleRequest) (
 		fmt.Println(err)
 		return resp, err
 	}
-	fmt.Print("-----"+string(respBody))
+	//fmt.Print("-----"+string(respBody))
 	return resp, nil
 }
