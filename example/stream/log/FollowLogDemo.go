@@ -15,20 +15,30 @@ func main() {
 	logService.Client.SetAccessKey("AKLTY2IwYmI4NWI2NGE2NDU0MDgwNDkxN2ZlYzRjYjZkMDQ")
 	logService.Client.SetSecretKey("TldZd09XVmhOMkl5TUdJNU5HRXdPV0kyWTJOak1HSmhPR1UwTXpjd1lqTQ==")
 
-	var req log.ClickLogRequest
+	var req log.FollowLogRequest
 	req.Timestamp = int64(time.Now().Local().Unix())
 	req.AccessToken = "4016360944571705153676044295679a"
-	req.GroupId = "6938426748178530823"
 	req.Partner = "vivoliulanqi"
-	req.Category = ""
-	req.EventTime = "1626861782"
-	req.Dt = "iphone6s"
-	req.Os = "iOS"
-	req.OsVersion = "12"
-	req.ClientVersion = "7.3.25"
-	req.DeviceBrand = "Apple"
 
-	response, err := logService.ClickLog(req)
+	var bodyList []log.FollowLogRequestBody
+
+	var body log.FollowLogRequestBody
+	body.GroupId = "7008339270066766349"
+	body.ToUserId = "104792520555"
+	body.CategoryName = "fhh_app_default_content"
+	body.Source = "article_detail"
+	bodyList = append(bodyList, body)
+
+	var body1 log.FollowLogRequestBody
+	body1.GroupId = "7008339270066766349"
+	body1.ToUserId = "104792520555"
+	body1.CategoryName = "fhh_app_default_content"
+	body1.Source = "article_detail"
+	bodyList = append(bodyList, body1)
+
+	req.Body = &body
+
+	response, err := logService.FollowLog(req)
 	if err != nil {
 		fmt.Println("Error")
 		return

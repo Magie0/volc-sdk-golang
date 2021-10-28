@@ -15,12 +15,15 @@ func main() {
 	logService.Client.SetAccessKey("AKLTY2IwYmI4NWI2NGE2NDU0MDgwNDkxN2ZlYzRjYjZkMDQ")
 	logService.Client.SetSecretKey("TldZd09XVmhOMkl5TUdJNU5HRXdPV0kyWTJOak1HSmhPR1UwTXpjd1lqTQ==")
 
-	var req log.ClickLogRequest
+	var req log.VideoOverLogRequest
 	req.Timestamp = int64(time.Now().Local().Unix())
 	req.AccessToken = "4016360944571705153676044295679a"
 	req.GroupId = "6938426748178530823"
 	req.Partner = "vivoliulanqi"
-	req.Category = ""
+	req.Position = "list"
+	req.Percent = "98"
+	req.Duration = "5000"
+	req.Category = "__ALL__"
 	req.EventTime = "1626861782"
 	req.Dt = "iphone6s"
 	req.Os = "iOS"
@@ -28,7 +31,7 @@ func main() {
 	req.ClientVersion = "7.3.25"
 	req.DeviceBrand = "Apple"
 
-	response, err := logService.ClickLog(req)
+	response, err := logService.VideoOverLog(req)
 	if err != nil {
 		fmt.Println("Error")
 		return
@@ -37,4 +40,5 @@ func main() {
 
 	fmt.Println(string(mar))
 }
+
 */

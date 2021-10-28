@@ -4,7 +4,7 @@ type MultiShowLogRequest struct {
 	Timestamp int64
 	Partner string
 	AccessToken string
-	Body *MultiShowLogRequestBody
+	Body []MultiShowLogRequestBody
 }
 
 type MultiShowLogRequestBody struct {

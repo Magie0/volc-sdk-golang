@@ -5,7 +5,7 @@ type FollowLogRequest struct {
 	Partner string
 	AccessToken string
 	Ouid string
-	Body *FollowLogRequestBody
+	Body FollowLogRequestBody
 }
 
 type FollowLogRequestBody struct {
